@@ -3,10 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="hotkey1" Type="System.Windows.Forms.Keys" Scope="User">
-      <Value Profile="(Default)">Ctrl+A</Value>
+      <Value Profile="(Default)">A</Value>
     </Setting>
     <Setting Name="hotkey2" Type="System.Windows.Forms.Keys" Scope="User">
-      <Value Profile="(Default)">A</Value>
+      <Value Profile="(Default)">Ctrl+A</Value>
+    </Setting>
+    <Setting Name="hotkey3" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Ctrl+Shift+A</Value>
+    </Setting>
+    <Setting Name="hotkey4" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Ctrl+Alt+Shift+A</Value>
     </Setting>
   </Settings>
 </SettingsFile>

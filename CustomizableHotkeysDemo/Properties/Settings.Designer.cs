@@ -25,7 +25,7 @@ namespace CustomizableHotkeysDemo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+A")]
+        [global::System.Configuration.DefaultSettingValueAttribute("A")]
         public global::System.Windows.Forms.Keys hotkey1 {
             get {
                 return ((global::System.Windows.Forms.Keys)(this["hotkey1"]));
@@ -37,13 +37,37 @@ namespace CustomizableHotkeysDemo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("A")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+A")]
         public global::System.Windows.Forms.Keys hotkey2 {
             get {
                 return ((global::System.Windows.Forms.Keys)(this["hotkey2"]));
             }
             set {
                 this["hotkey2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Shift+A")]
+        public global::System.Windows.Forms.Keys hotkey3 {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["hotkey3"]));
+            }
+            set {
+                this["hotkey3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Alt+Shift+A")]
+        public global::System.Windows.Forms.Keys hotkey4 {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["hotkey4"]));
+            }
+            set {
+                this["hotkey4"] = value;
             }
         }
     }
