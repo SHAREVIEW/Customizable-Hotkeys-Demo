@@ -1,11 +1,14 @@
-﻿using System.Windows.Forms;
+﻿using CustomizableHotkeysDemo.Properties;
+using System.Windows.Forms;
 
 namespace CustomizableHotkeysDemo
 {
     public partial class Form1 : Form
     {
-        private Keys hotkey1 = Keys.Control | Keys.A;
-        private Keys hotkey2 = Keys.A;
+        private readonly KeysConverter keysConverter = new KeysConverter();
+
+        private Keys hotkey1;
+        private Keys hotkey2;
 
         public Form1()
         {
@@ -47,12 +50,12 @@ namespace CustomizableHotkeysDemo
             {
                 // Clear / disable the hotkey
                 hotkey = Keys.None;
-                textBox.Clear();
+                textBox.Text = "None";
                 return;
             }
 
             hotkey = e.KeyData;
-            textBox.Text = new KeysConverter().ConvertToString(e.KeyData);
+            textBox.Text = keysConverter.ConvertToString(e.KeyData);
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -64,5 +67,26 @@ namespace CustomizableHotkeysDemo
         {
             RegisterLocalHotkey(e, textBox2, ref hotkey2);
         }
+
+        #region Settings
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+            hotkey1 = Settings.Default.hotkey1;
+            hotkey2 = Settings.Default.hotkey2;
+
+            textBox1.Text = keysConverter.ConvertToString(Settings.Default.hotkey1);
+            textBox2.Text = keysConverter.ConvertToString(Settings.Default.hotkey2);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.hotkey1 = hotkey1;
+            Settings.Default.hotkey2 = hotkey2;
+
+            Settings.Default.Save();
+        }
+
+        #endregion Settings
     }
 }
